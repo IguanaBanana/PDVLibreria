@@ -4,14 +4,14 @@
     "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\LIBRERIA\\LIBRERIA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj": {
+    "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj",
+        "projectUniqueName": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj",
         "projectName": "Back_CRUDs_BD",
-        "projectPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj",
+        "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj",
         "packagesPath": "C:\\Users\\aneth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\obj\\",
+        "outputPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aneth\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,65 +69,6 @@
         }
       }
     },
-    "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj",
-        "projectName": "Middle_Abarrotes_PDV",
-        "projectPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj",
-        "packagesPath": "C:\\Users\\aneth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\aneth\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj": {
-                "projectPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\LIBRERIA\\LIBRERIA.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -152,8 +93,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
-                "projectPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
+              "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
+                "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
               }
             }
           }
@@ -184,6 +125,65 @@
             },
             "Microsoft.WindowsDesktop.App.WindowsForms": {
               "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj",
+        "projectName": "Middle_Abarrotes_PDV",
+        "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj",
+        "packagesPath": "C:\\Users\\aneth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\aneth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj": {
+                "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Back_CRUDs_BD\\Back_CRUDs_BD.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
