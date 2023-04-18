@@ -49,9 +49,16 @@ namespace LIBRERIA
                     dataGridVenta.Rows[index].Cells[4].Value = numericCantVentas.Value;
                     dataGridVenta.Refresh();
                 }
-                int total = Convert.ToInt32(dataGridVenta.CurrentRow.Cells[3].Value.ToString()) * Convert.ToInt32(dataGridVenta.CurrentRow.Cells[4].Value.ToString());
-                textBoxTotalVenta.Text = total.ToString();
-                double sub = total / 1.04;
+
+                //meter en un for para sumar todos los renglones.
+                double recibir=0;
+                for (int i = 0; i < dataGridVenta.Rows.Count - 1; i++)
+                {
+                    double total = Convert.ToDouble(dataGridVenta.Rows[i].Cells[3].Value.ToString()) * Convert.ToDouble(dataGridVenta.Rows[i].Cells[4].Value.ToString());
+                    recibir += total;
+                }
+                textBoxTotalVenta.Text = recibir.ToString();
+                double sub = recibir / 1.04;
                 textBoxSubVenta.Text = sub.ToString();
             }
             else
