@@ -1818,13 +1818,13 @@
     },
     "Back_CRUDs_BD/1.0.0": {
       "type": "project",
-      "path": "../../../../../../Downloads/sources/repos/PDVAbarrotes2023/code/PDV2023/Back_CRUDs_BD/Back_CRUDs_BD.csproj",
-      "msbuildProject": "../../../../../../Downloads/sources/repos/PDVAbarrotes2023/code/PDV2023/Back_CRUDs_BD/Back_CRUDs_BD.csproj"
+      "path": "../Back_CRUDs_BD/Back_CRUDs_BD.csproj",
+      "msbuildProject": "../Back_CRUDs_BD/Back_CRUDs_BD.csproj"
     },
     "Middle_Abarrotes_PDV/1.0.0": {
       "type": "project",
-      "path": "../../../../../../Downloads/sources/repos/PDVAbarrotes2023/code/PDV2023/Middle_Abarrotes_PDV/Middle_Abarrotes_PDV.csproj",
-      "msbuildProject": "../../../../../../Downloads/sources/repos/PDVAbarrotes2023/code/PDV2023/Middle_Abarrotes_PDV/Middle_Abarrotes_PDV.csproj"
+      "path": "../Middle_Abarrotes_PDV/Middle_Abarrotes_PDV.csproj",
+      "msbuildProject": "../Middle_Abarrotes_PDV/Middle_Abarrotes_PDV.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1859,8 +1859,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
-              "projectPath": "C:\\Users\\aneth\\Downloads\\sources\\repos\\PDVAbarrotes2023\\code\\PDV2023\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
+            "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
+              "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
             }
           }
         }
