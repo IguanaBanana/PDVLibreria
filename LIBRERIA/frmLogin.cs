@@ -31,14 +31,15 @@ namespace LIBRERIA
             LoginAdmi frm = new LoginAdmi();
             frm.Show();
         }
-        
+
         public void buttonAceptarLoginUsu_Click(object sender, EventArgs e)
         {
 
-            List <UsuariosMiddle> resultado = usu.consultarUsuarios($"Nombre =  '{textBoxUsuarioLoginUsu.Text}' AND Password =  '{ textBoxPasswordLoginUsu.Text}'");
+            List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Nombre =  '{textBoxUsuarioLoginUsu.Text}' AND Password =  '{textBoxPasswordLoginUsu.Text}'");
             //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
-            if (resultado.Count > 0) 
-            {
+            if (resultado.Count > 0)
+            {   textBoxPasswordLoginUsu.Clear();
+                textBoxUsuarioLoginUsu.Clear();
                 Venta frm = new Venta();
                 frm.Show();
             }

@@ -91,6 +91,7 @@
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "LoginAdmi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginAdmi";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

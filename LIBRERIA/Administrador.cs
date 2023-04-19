@@ -97,7 +97,9 @@ namespace LIBRERIA
 
         private void btnSalirAdmi_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmLogin frm = new frmLogin();
+            frm.Show();
         }
 
         private void Administrador_Load(object sender, EventArgs e)

@@ -293,6 +293,7 @@
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Editarcs";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Editarcs";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -130,6 +130,7 @@
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Usuario";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

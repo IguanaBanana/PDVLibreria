@@ -75,7 +75,7 @@ namespace LIBRERIA
                 case "Fantasia":
                     valorPresentacion = Presentacion.Fantasia; break;
             }
-            bool resultado = prod.modificar(int.Parse(textBoxIDEditar.Text),textBoxTituloEditar.Text, textBoxISSNEditar.Text, textBoxAutorEditar.Text, valorPresentacion, double.Parse(textBoxPrecioEditar.Text));
+            bool resultado = prod.modificar(int.Parse(textBoxIDEditar.Text), textBoxTituloEditar.Text, textBoxISSNEditar.Text, textBoxAutorEditar.Text, valorPresentacion, double.Parse(textBoxPrecioEditar.Text));
             if (resultado == true)
             {
                 MessageBox.Show("Guardado satisfactoriamente " + Producto.msgError);

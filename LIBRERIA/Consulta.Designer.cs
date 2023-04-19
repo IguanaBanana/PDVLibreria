@@ -187,6 +187,7 @@
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Consulta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Consulta";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
