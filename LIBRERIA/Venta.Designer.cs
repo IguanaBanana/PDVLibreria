@@ -57,6 +57,7 @@
             numericCantVentas = new NumericUpDown();
             label2 = new Label();
             buttonBuscVenta = new Button();
+            buttonSalirVenta = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridLista).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridVenta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productoBindingSource).BeginInit();
@@ -290,6 +291,7 @@
             numericCantVentas.Name = "numericCantVentas";
             numericCantVentas.Size = new Size(106, 30);
             numericCantVentas.TabIndex = 22;
+            numericCantVentas.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label2
             // 
@@ -313,12 +315,26 @@
             buttonBuscVenta.UseVisualStyleBackColor = true;
             buttonBuscVenta.Click += buttonBuscVenta_Click;
             // 
+            // buttonSalirVenta
+            // 
+            buttonSalirVenta.BackColor = Color.IndianRed;
+            buttonSalirVenta.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSalirVenta.Location = new Point(1044, 502);
+            buttonSalirVenta.Margin = new Padding(3, 2, 3, 2);
+            buttonSalirVenta.Name = "buttonSalirVenta";
+            buttonSalirVenta.Size = new Size(62, 28);
+            buttonSalirVenta.TabIndex = 25;
+            buttonSalirVenta.Text = "Salir";
+            buttonSalirVenta.UseVisualStyleBackColor = false;
+            buttonSalirVenta.Click += buttonSalirVenta_Click;
+            // 
             // Venta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1116, 541);
+            Controls.Add(buttonSalirVenta);
             Controls.Add(buttonBuscVenta);
             Controls.Add(label2);
             Controls.Add(numericCantVentas);
@@ -339,6 +355,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Venta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Venta";
             ((System.ComponentModel.ISupportInitialize)dataGridLista).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridVenta).EndInit();
@@ -378,5 +395,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Button buttonSalirVenta;
     }
 }

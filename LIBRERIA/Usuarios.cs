@@ -1,4 +1,5 @@
-﻿using Middle_Abarrotes_PDV;
+﻿using Microsoft.VisualBasic;
+using Middle_Abarrotes_PDV;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,12 +42,11 @@ namespace LIBRERIA
 
                     }
                 }
+                else
+                {
+                    MessageBox.Show("ERROR AL GUARDAR ");
 
-            }
-            else
-            {
-                MessageBox.Show("ERROR AL GUARDAR " + Producto.msgError);
-
+                }
             }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -58,38 +58,42 @@ namespace LIBRERIA
         }
         private void buttonEditarUsuario_Click(object sender, EventArgs e)
         {
-            bool resultado = usu.modificarUsuarios(int.Parse(textBoxIDUsuario.Text), textBoxNombreUsuario.Text, textBoxCorreoUsuario.Text, textBoxPassUsuario.Text);
-            if (resultado == true)
-            {
-                MessageBox.Show("Guardado satisfactoriamente " + Producto.msgError);
-                List<UsuariosMiddle> res = usu.consultarUsuarios($"Nombre =  '{textBoxNombreUsuario.Text}' AND Password =  '{textBoxPassUsuario.Text}'");
-                if (res.Count > 0)
+                bool resultado = usu.modificarUsuarios(int.Parse(textBoxIDUsuario.Text), textBoxNombreUsuario.Text, textBoxCorreoUsuario.Text, textBoxPassUsuario.Text);
+                if (resultado == true)
                 {
-                    dataGridView1.Rows.Clear();
-                    foreach (UsuariosMiddle usu in res)
+                    MessageBox.Show("Guardado satisfactoriamente ");
+                    List<UsuariosMiddle> res = usu.consultarUsuarios($"Nombre =  '{textBoxNombreUsuario.Text}' AND Password =  '{textBoxPassUsuario.Text}'");
+                    if (res.Count > 0)
                     {
-                        dataGridView1.Rows.Add(new object[] { usu.id, usu.nombre, usu.correo, usu.password });
+                        dataGridView1.Rows.Clear();
+                        foreach (UsuariosMiddle usu in res)
+                        {
+                            dataGridView1.Rows.Add(new object[] { usu.id, usu.nombre, usu.correo, usu.password });
+                            textBoxIDUsuario.Clear();
+                            textBoxNombreUsuario.Clear();
+                            textBoxCorreoUsuario.Clear();
+                            textBoxPassUsuario.Clear();
+                        }
+                    }
+                }
+        }
+
+        private void buttonEliminarUsuario_Click(object sender, EventArgs e)
+        {   
+                    bool resultado = usu.borrarUsuario(int.Parse(textBoxIDUsuario.Text));
+                    if (resultado == false)
+                    {
+                        MessageBox.Show("Eliminado con exito" + Producto.msgError);
+                        dataGridView1.Rows.Clear();
                         textBoxIDUsuario.Clear();
                         textBoxNombreUsuario.Clear();
                         textBoxCorreoUsuario.Clear();
                         textBoxPassUsuario.Clear();
                     }
-                }
-            }
-        }
-
-        private void buttonEliminarUsuario_Click(object sender, EventArgs e)
-        {
-            bool resultado = usu.borrarUsuario(int.Parse(textBoxIDUsuario.Text));
-            if (resultado == false)
-            {
-                MessageBox.Show("Eliminado con exito" + Producto.msgError);
-                dataGridView1.Rows.Clear();
-                textBoxIDUsuario.Clear();
-                textBoxNombreUsuario.Clear();
-                textBoxCorreoUsuario.Clear();
-                textBoxPassUsuario.Clear();
-            }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar.");
+                    }
         }
 
         private void buttonBuscarUsu_Click(object sender, EventArgs e)
@@ -107,6 +111,10 @@ namespace LIBRERIA
                     textBoxPassUsuario.Clear();
                 }
             }
+                 else
+                 {
+                MessageBox.Show("Usuario inexistente");
+                 }
         }
     }
 }

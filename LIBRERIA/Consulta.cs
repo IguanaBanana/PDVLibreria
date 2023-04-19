@@ -32,6 +32,7 @@ namespace LIBRERIA
                     textBoxTituloConsulta.Clear();
                 }
             }
+            else { MessageBox.Show("Titulo inexistente."); }
         }
 
         private void buttonBuscarxAutor_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace LIBRERIA
                     textBoxTituloConsulta.Clear();
                 }
             }
+            else { MessageBox.Show("Autor inexistente."); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace LIBRERIA
             List<Producto> res = prod.consultageneral("productos");
             if (res.Count > 0)
             {
-                    foreach (Producto prodResultado in res)
+                foreach (Producto prodResultado in res)
                 {
                     dataGridView1.Rows.Add(new object[] { prodResultado.id, prodResultado.titulo, prodResultado.issn, prodResultado.autor, prodResultado.presentacion, prodResultado.precio });
                 }

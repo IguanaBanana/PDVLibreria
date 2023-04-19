@@ -240,6 +240,7 @@
             Controls.Add(panelAmdiForm);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Administrador";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PanPrin";
             Load += Administrador_Load;
             panel1.ResumeLayout(false);

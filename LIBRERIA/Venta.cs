@@ -51,7 +51,7 @@ namespace LIBRERIA
                 }
 
                 //meter en un for para sumar todos los renglones.
-                double recibir=0;
+                double recibir = 0;
                 for (int i = 0; i < dataGridVenta.Rows.Count - 1; i++)
                 {
                     double total = Convert.ToDouble(dataGridVenta.Rows[i].Cells[3].Value.ToString()) * Convert.ToDouble(dataGridVenta.Rows[i].Cells[4].Value.ToString());
@@ -85,6 +85,19 @@ namespace LIBRERIA
             {
                 MessageBox.Show("Venta Exitosa.", "Su cambio es $" + feria + ". Gracias, vuelva pronto :).");
             }
+            textBoxEfectivoVenta.Clear();
+            textBoxSubVenta.Clear();
+            textBoxTotalVenta.Clear();
+            textBoxTituloVenta.Clear();
+            numericCantVentas.ResetText();
+            dataGridLista.Rows.Clear();
+            dataGridVenta.Rows.Clear();
+        }
+
+        private void buttonSalirVenta_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
         }
     }
 }

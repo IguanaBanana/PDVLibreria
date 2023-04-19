@@ -21,7 +21,7 @@ namespace LIBRERIA
 
         private void buttonAceptarLoginAdmi_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
             List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Nombre = 'Administrador' AND Password =  '{textBoxPasswordLoginAdmi.Text}'");
             //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
             if (resultado.Count > 0)
