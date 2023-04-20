@@ -28,16 +28,16 @@ namespace LIBRERIA
 
         private void buttonAgregarAgregar_Click(object sender, EventArgs e)
         {
-            Presentacion valorPresentacion = new Presentacion();
+            presentacion valorPresentacion = new presentacion();
             //convertir de string a PResentacion
             switch (comboBoxCategoriaAgregar.SelectedItem.ToString())
             {
                 case "Terror":
-                    valorPresentacion = Presentacion.Terror; break;
+                    valorPresentacion = presentacion.Terror; break;
                 case "Romance":
-                    valorPresentacion = Presentacion.Romance; break;
+                    valorPresentacion = presentacion.Romance; break;
                 case "Fantasia":
-                    valorPresentacion = Presentacion.Fantasia; break;
+                    valorPresentacion = presentacion.Fantasia; break;
             }
             bool resultado = prod.crear(textBoxTituloAgregar.Text, textBoxISSNAgregar.Text, textBoxAutorAgregar.Text, double.Parse(textBoxPrecioAgregar.Text), valorPresentacion);
             if (resultado == true)

@@ -37,7 +37,6 @@ namespace Middle_Abarrotes_PDV
                 for (int i = 0; i < res.Count; i++)
                 {
                     Usu = new UsuariosMiddle();
-                    Presentacion presentacionTexto;
                     object[] tempo = res[0];
                     Usu.id = int.Parse(tempo[0].ToString());
                     Usu.nombre = tempo[1].ToString();

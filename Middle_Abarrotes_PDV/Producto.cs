@@ -12,7 +12,7 @@ namespace Middle_Abarrotes_PDV
 		public string titulo;
 		public string issn;
 		public string autor;
-		public Presentacion presentacion;
+		public presentacion presentacion;
 		public double precio;
 		//vars para reutilizar el CRUD
 		CRUDs_BD bd;
@@ -26,7 +26,7 @@ namespace Middle_Abarrotes_PDV
 		}
 
 		//métodos de la clase CRUD
-		public bool crear(string titulo, string issn, string autor, double precio, Presentacion presentacion)
+		public bool crear(string titulo, string issn, string autor, double precio, presentacion presentacion)
 		{
 			List<string> nombresCampos = new List<string>()
 			{
@@ -49,7 +49,7 @@ namespace Middle_Abarrotes_PDV
 		}//crear
 
 
-		public bool modificar(int id, string titulo, string issn, string autor, Presentacion presentacion, double precio)
+		public bool modificar(int id, string titulo, string issn, string autor, presentacion presentacion, double precio)
 		{
 			List<string> nombresCampos = new List<string>()
 			{
@@ -91,7 +91,7 @@ namespace Middle_Abarrotes_PDV
                 for (int i = 0; i < res.Count; i++)
                 {
                     prodResultado = new Producto();
-                    Presentacion presentacionTexto;
+                    presentacion presentacionTexto;
                     object[] tempo = res[0];
                     prodResultado.id = int.Parse(tempo[0].ToString());
                     prodResultado.titulo = tempo[1].ToString();
@@ -101,18 +101,19 @@ namespace Middle_Abarrotes_PDV
                     switch (tempo[4].ToString())
                     {
                         case "Terror":
-                            presentacionTexto = Presentacion.Terror;
+                            presentacionTexto = presentacion.Terror;
                             break;
                         case "Romance":
-                            presentacionTexto = Presentacion.Romance;
+                            presentacionTexto = presentacion.Romance;
                             break;
                         case "Fantasia":
-                            presentacionTexto = Presentacion.Fantasia;
+                            presentacionTexto = presentacion.Fantasia;
                             break;
                         default:
-                            presentacionTexto = Presentacion.Terror;
+                            presentacionTexto = presentacion.Terror;
                             break;
                     }
+                    prodResultado.presentacion = presentacionTexto;
                 }
                 listadePro.Add(prodResultado);
 
@@ -136,7 +137,7 @@ namespace Middle_Abarrotes_PDV
 				for (int i = 0; i < res.Count; i++)
 				{
 					prodResultado = new Producto();
-					Presentacion presentacionTexto;
+					presentacion presentacionTexto;
 					object[] tempo = res[0];
 					prodResultado.id = int.Parse(tempo[0].ToString());
 					prodResultado.titulo = tempo[1].ToString();
@@ -146,20 +147,21 @@ namespace Middle_Abarrotes_PDV
 					switch (tempo[4].ToString())
 					{
 						case "Terror":
-							presentacionTexto = Presentacion.Terror;
+							presentacionTexto = presentacion.Terror;
 							break;
 						case "Romance":
-							presentacionTexto = Presentacion.Romance;
+							presentacionTexto = presentacion.Romance;
 							break;
 						case "Fantasia":
-							presentacionTexto = Presentacion.Fantasia;
+							presentacionTexto = presentacion.Fantasia;
 							break;
 						default:
-							presentacionTexto = Presentacion.Terror;
+							presentacionTexto = presentacion.Terror;
 							break;
 					}
-				}
-				listadePro.Add(prodResultado);
+                    prodResultado.presentacion = presentacionTexto;
+                }
+                listadePro.Add(prodResultado);
 
             }
 			else
@@ -181,7 +183,7 @@ namespace Middle_Abarrotes_PDV
                 for (int i = 0; i < res.Count; i++)
                 {
                     prodResultado = new Producto();
-                    Presentacion presentacionTexto;
+                    presentacion presentacionTexto;
                     object[] tempo = res[0];
                     prodResultado.id = int.Parse(tempo[0].ToString());
                     prodResultado.titulo = tempo[1].ToString();
@@ -191,18 +193,19 @@ namespace Middle_Abarrotes_PDV
                     switch (tempo[4].ToString())
                     {
                         case "Terror":
-                            presentacionTexto = Presentacion.Terror;
+                            presentacionTexto = presentacion.Terror;
                             break;
                         case "Romance":
-                            presentacionTexto = Presentacion.Romance;
+                            presentacionTexto = presentacion.Romance;
                             break;
                         case "Fantasia":
-                            presentacionTexto = Presentacion.Fantasia;
+                            presentacionTexto = presentacion.Fantasia;
                             break;
                         default:
-                            presentacionTexto = Presentacion.Terror;
+                            presentacionTexto = presentacion.Terror;
                             break;
                     }
+                    prodResultado.presentacion = presentacionTexto;
                 }
                 listadePro.Add(prodResultado);
 
