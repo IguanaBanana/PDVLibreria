@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.SqlServer.Server;
+using Microsoft.VisualBasic;
 using Middle_Abarrotes_PDV;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace LIBRERIA
 
         private void buttonBuscVenta_Click(object sender, EventArgs e)
         {
-            List<Producto> res = prod.consultarPorTitulo($"Titulo= '{textBoxTituloVenta.Text}'");
+            List<Producto> res = prod.consultarPorTitulo($"Titulo LIKE %'{textBoxTituloVenta.Text}'%");
             if (res.Count > 0)
             {
                 foreach (Producto prodResultado in res)
@@ -59,7 +60,9 @@ namespace LIBRERIA
                 }
                 textBoxTotalVenta.Text = recibir.ToString();
                 double sub = recibir / 1.04;
-                textBoxSubVenta.Text = sub.ToString();
+                textBoxSubVenta.Text = sub.ToString("N2");
+                double iva = recibir - sub;
+                textBoxIVA.Text = iva.ToString("N2");
             }
             else
             {
@@ -75,29 +78,29 @@ namespace LIBRERIA
                 ProductoAVender prodVender = new ProductoAVender(int.Parse(dataGridVenta.Rows[i].Cells[0].Value.ToString()), int.Parse(dataGridVenta.Rows[i].Cells[4].Value.ToString()));
                 productoAVenders.Add(prodVender);
             }
-            double cambio = venta.registrarVenta(1, double.Parse(textBoxTotalVenta.Text), double.Parse(textBoxEfectivoVenta.Text), productoAVenders);
+            double vent = venta.registrarVenta(1, double.Parse(textBoxTotalVenta.Text), double.Parse(textBoxEfectivoVenta.Text), productoAVenders);
             double feria = double.Parse(textBoxEfectivoVenta.Text) - double.Parse(textBoxTotalVenta.Text);
-            if (cambio == -1)
+            if (feria < 0 | vent == -1)
             {
                 MessageBox.Show("Error al registrar venta", Ventass.msgError);
             }
             else
             {
                 MessageBox.Show("Venta Exitosa.", "Su cambio es $" + feria + ". Gracias, vuelva pronto :).");
+                textBoxEfectivoVenta.Clear();
+                textBoxSubVenta.Clear();
+                textBoxTotalVenta.Clear();
+                textBoxTituloVenta.Clear();
+                numericCantVentas.ResetText();
+                dataGridLista.Rows.Clear();
+                dataGridVenta.Rows.Clear();
             }
-            textBoxEfectivoVenta.Clear();
-            textBoxSubVenta.Clear();
-            textBoxTotalVenta.Clear();
-            textBoxTituloVenta.Clear();
-            numericCantVentas.ResetText();
-            dataGridLista.Rows.Clear();
-            dataGridVenta.Rows.Clear();
         }
 
         private void buttonSalirVenta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
         }
     }
 }

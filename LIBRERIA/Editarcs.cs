@@ -21,7 +21,7 @@ namespace LIBRERIA
 
         private void buttonSeleccionarEditar_Click(object sender, EventArgs e)
         {
-            List<Producto> res = prod.consultarPorTitulo($"Titulo= '{textBoxTituloEditarBuscar.Text}'");
+            List<Producto> res = prod.consultarPorTitulo($"Titulo LIKE '%{textBoxTituloEditarBuscar.Text}%'");
             if (res.Count > 0)
             {
                 dataGridView1.Rows.Clear();
@@ -64,16 +64,16 @@ namespace LIBRERIA
 
         private void buttonEditarEditar_Click(object sender, EventArgs e)
         {
-            Presentacion valorPresentacion = new Presentacion();
+            presentacion valorPresentacion = new presentacion();
             //convertir de string a PResentacion
             switch (comboBoxCategoriaEditar.SelectedItem.ToString())
             {
                 case "Terror":
-                    valorPresentacion = Presentacion.Terror; break;
+                    valorPresentacion = presentacion.Terror; break;
                 case "Romance":
-                    valorPresentacion = Presentacion.Romance; break;
+                    valorPresentacion = presentacion.Romance; break;
                 case "Fantasia":
-                    valorPresentacion = Presentacion.Fantasia; break;
+                    valorPresentacion = presentacion.Fantasia; break;
             }
             bool resultado = prod.modificar(int.Parse(textBoxIDEditar.Text), textBoxTituloEditar.Text, textBoxISSNEditar.Text, textBoxAutorEditar.Text, valorPresentacion, double.Parse(textBoxPrecioEditar.Text));
             if (resultado == true)

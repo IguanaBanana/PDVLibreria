@@ -1,10 +1,10 @@
 ﻿using System;
 namespace Middle_Abarrotes_PDV
 {
-	public enum Presentacion
+	public enum presentacion
 	{
 		Terror,
-		Romance,
+        Romance,
 		Fantasia
 	}
 }
