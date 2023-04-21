@@ -17,6 +17,7 @@ namespace LIBRERIA
         public Consulta()
         {
             InitializeComponent();
+            inicializarValoresDataGrid();
         }
 
         private void buttonBuscarConsulta_Click(object sender, EventArgs e)
@@ -50,8 +51,7 @@ namespace LIBRERIA
             }
             else { MessageBox.Show("Autor inexistente."); }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void inicializarValoresDataGrid()
         {
             List<Producto> res = prod.consultageneral("productos");
             if (res.Count > 0)
@@ -67,8 +67,6 @@ namespace LIBRERIA
                     dataGridView1.Rows[index].Cells[5].Value = prodResultado.precio;
                     dataGridView1.Refresh();
                 }
-                //dataGridView1.Rows.Add(new object[] { prodResultado.id, prodResultado.titulo, prodResultado.issn, prodResultado.autor, prodResultado.presentacion, prodResultado.precio });
-
             }
         }
     }

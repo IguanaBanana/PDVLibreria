@@ -92,8 +92,8 @@ namespace Middle_Abarrotes_PDV
                 {
                     prodResultado = new Producto();
                     presentacion presentacionTexto;
-                    object[] tempo = res[0];
-                    prodResultado.id = int.Parse(tempo[0].ToString());
+                    object[] tempo = res[i];
+					prodResultado.id = int.Parse(tempo[0].ToString());
                     prodResultado.titulo = tempo[1].ToString();
                     prodResultado.issn = tempo[2].ToString();
                     prodResultado.autor = tempo[3].ToString();
@@ -114,8 +114,8 @@ namespace Middle_Abarrotes_PDV
                             break;
                     }
                     prodResultado.presentacion = presentacionTexto;
+					listadePro.Add(prodResultado);
                 }
-                listadePro.Add(prodResultado);
 
             }
             else
