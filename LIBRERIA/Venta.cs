@@ -25,7 +25,7 @@ namespace LIBRERIA
 
         private void buttonBuscVenta_Click(object sender, EventArgs e)
         {
-            List<Producto> res = prod.consultarPorTitulo($"Titulo LIKE %'{textBoxTituloVenta.Text}'%");
+            List<Producto> res = prod.consultarPorTitulo($"Titulo LIKE '%{textBoxTituloVenta.Text}%'");
             if (res.Count > 0)
             {
                 foreach (Producto prodResultado in res)
