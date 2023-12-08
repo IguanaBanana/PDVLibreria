@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LIBRERIA
 {
@@ -22,7 +23,7 @@ namespace LIBRERIA
         private void buttonAceptarLoginAdmi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Nombre = 'Administrador' AND Password =  '{textBoxPasswordLoginAdmi.Text}'");
+            List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Name = 'Admin' AND Password =  '{textBoxPasswordLoginAdmi.Text}'");
             //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
             if (resultado.Count > 0)
             {
@@ -34,5 +35,25 @@ namespace LIBRERIA
                 MessageBox.Show("Los datos son incorrectos");
             }
         }
+
+        private void buttonAceptarLoginAdmi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.Hide();
+                List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Name = 'Admin' AND Password =  '{textBoxPasswordLoginAdmi.Text}'");
+                //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
+                if (resultado.Count > 0)
+                {
+                    Administrador frm = new Administrador();
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos son incorrectos");
+                }
+            }
+        }
     }
 }
+

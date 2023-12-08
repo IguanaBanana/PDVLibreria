@@ -58,3 +58,16 @@ C:\Users\aneth\OneDrive\Escritorio\source\repos\PDVLibrros\Back_CRUDs_BD\obj\Deb
 C:\Users\aneth\OneDrive\Escritorio\source\repos\PDVLibrros\Back_CRUDs_BD\obj\Debug\net6.0\refint\Back_CRUDs_BD.dll
 C:\Users\aneth\OneDrive\Escritorio\source\repos\PDVLibrros\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.pdb
 C:\Users\aneth\OneDrive\Escritorio\source\repos\PDVLibrros\Back_CRUDs_BD\obj\Debug\net6.0\ref\Back_CRUDs_BD.dll
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.deps.json
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.dll
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.pdb
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.csproj.AssemblyReference.cache
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.AssemblyInfoInputs.cache
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.AssemblyInfo.cs
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.csproj.CoreCompileInputs.cache
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.sourcelink.json
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.dll
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\refint\Back_CRUDs_BD.dll
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.pdb
+C:\Users\ivela\OneDrive\Escritorio\UTH\Source\repos\PDVLibreria\Back_CRUDs_BD\obj\Debug\net6.0\ref\Back_CRUDs_BD.dll

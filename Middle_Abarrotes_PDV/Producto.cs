@@ -1,6 +1,7 @@
 ﻿using System;
 using Back_CRUDs_BD;
 using Middle_Abarrotes_PDV;
+using static System.Net.Mime.MediaTypeNames;
 using static Mysqlx.Datatypes.Scalar.Types;
 
 namespace Middle_Abarrotes_PDV
@@ -9,9 +10,9 @@ namespace Middle_Abarrotes_PDV
 	{
 		//propiedades de la clase
 		public int id;
-		public string titulo;
-		public string issn;
-		public string autor;
+		public string nombre;
+		public string descripcion;
+		public int cantidad;
 		public presentacion presentacion;
 		public double precio;
 		//vars para reutilizar el CRUD
@@ -22,25 +23,26 @@ namespace Middle_Abarrotes_PDV
 		public Producto()
 		{
 			//crear una instancia de MYSQL a mi bd
-			bd = new Back_CRUDs_BD.MySql("localhost", "root", "", "La_Libreria", "3306");
+			bd = new Back_CRUDs_BD.MySql("localhost", "root", "", "pdv-luis", "3306");
 		}
 
-		//métodos de la clase CRUD
-		public bool crear(string titulo, string issn, string autor, double precio, presentacion presentacion)
+        //métodos de la clase CRUD 
+
+        public bool crear(int id, string nombre, string descripcion,double precio, int cantidad)
 		{
 			List<string> nombresCampos = new List<string>()
 			{
-					"titulo", "issn", "autor", "precio", "presentacion"
+					"ProductID", "Name", "Description", "Price", "QuantityInStock"
 			};
 
 			List<ValoresAInsertar> vals = new List<ValoresAInsertar>();
-			vals.Add(new ValoresAInsertar(titulo));
-			vals.Add(new ValoresAInsertar(issn));
-			vals.Add(new ValoresAInsertar(autor));
+			vals.Add(new ValoresAInsertar(id.ToString()));
+			vals.Add(new ValoresAInsertar(nombre));
+			vals.Add(new ValoresAInsertar(descripcion));
 			vals.Add(new ValoresAInsertar(precio.ToString(), false));
-			vals.Add(new ValoresAInsertar(presentacion.ToString()));
+			vals.Add(new ValoresAInsertar(cantidad.ToString()));
 
-			bool resultado = this.bd.insertar("productos", nombresCampos, vals);
+			bool resultado = this.bd.insertar("products", nombresCampos, vals);
 			//valir el res
 			if (resultado == false)
 				Producto.msgError = this.bd.msgError;
@@ -49,21 +51,21 @@ namespace Middle_Abarrotes_PDV
 		}//crear
 
 
-		public bool modificar(int id, string titulo, string issn, string autor, presentacion presentacion, double precio)
-		{
-			List<string> nombresCampos = new List<string>()
-			{
-					"titulo", "issn", "autor", "presentacion", "precio"
-			};
+		public bool modificar(int id, string nombre, string descripcion, int precio, int cantidad)
+        {
+            List<string> nombresCampos = new List<string>()
+            {
+                    "ProductID", "Name", "Description", "Price", "QuantityInStock"
+            };
 
-			List<ValoresAInsertar> vals = new List<ValoresAInsertar>();
-			vals.Add(new ValoresAInsertar(titulo));
-			vals.Add(new ValoresAInsertar(issn));
-			vals.Add(new ValoresAInsertar(autor));
-			vals.Add(new ValoresAInsertar(presentacion.ToString()));
-			vals.Add(new ValoresAInsertar(precio.ToString(), false));
+            List<ValoresAInsertar> vals = new List<ValoresAInsertar>();
+            vals.Add(new ValoresAInsertar(id.ToString()));
+            vals.Add(new ValoresAInsertar(nombre));
+            vals.Add(new ValoresAInsertar(descripcion));
+            vals.Add(new ValoresAInsertar(precio.ToString(), false));
+            vals.Add(new ValoresAInsertar(cantidad.ToString()));
 
-			bool resultado = this.bd.modificar("productos", nombresCampos, vals, id);
+            bool resultado = this.bd.modificar("products", nombresCampos, vals, id);
 			//valir el res
 			if (resultado == false)
 				Producto.msgError = this.bd.msgError;
@@ -74,7 +76,7 @@ namespace Middle_Abarrotes_PDV
 		//borrar
 		public bool borrar(int id)
 		{
-			bool res = this.bd.borrar("productos", id);
+			bool res = this.bd.borrar("products", id);
 			if (res = false)
 				Producto.msgError = this.bd.msgError;
 			return res;
@@ -84,7 +86,7 @@ namespace Middle_Abarrotes_PDV
 		{
             List<Producto> listadePro = new List<Producto>();
             Producto prodResultado = new Producto();
-            List<object[]> res = this.bd.consulta("productos");
+            List<object[]> res = this.bd.consulta("products");
             //validamos que traig un elemento la lista
             if (res.Count >= 1)
             {
@@ -94,26 +96,26 @@ namespace Middle_Abarrotes_PDV
                     presentacion presentacionTexto;
                     object[] tempo = res[i];
 					prodResultado.id = int.Parse(tempo[0].ToString());
-                    prodResultado.titulo = tempo[1].ToString();
-                    prodResultado.issn = tempo[2].ToString();
-                    prodResultado.autor = tempo[3].ToString();
-                    prodResultado.precio = double.Parse(tempo[5].ToString());
-                    switch (tempo[4].ToString())
-                    {
-                        case "Terror":
-                            presentacionTexto = presentacion.Terror;
-                            break;
-                        case "Romance":
-                            presentacionTexto = presentacion.Romance;
-                            break;
-                        case "Fantasia":
-                            presentacionTexto = presentacion.Fantasia;
-                            break;
-                        default:
-                            presentacionTexto = presentacion.Terror;
-                            break;
-                    }
-                    prodResultado.presentacion = presentacionTexto;
+                    prodResultado.nombre = tempo[1].ToString();
+                    prodResultado.descripcion = tempo[2].ToString();
+                    prodResultado.cantidad = int.Parse(tempo[3].ToString());
+                    prodResultado.precio = double.Parse(tempo[4].ToString());
+                    //switch (tempo[4].ToString())
+                    //{
+                    //    case "Terror":
+                    //        presentacionTexto = presentacion.Terror;
+                    //        break;
+                    //    case "Romance":
+                    //        presentacionTexto = presentacion.Romance;
+                    //        break;
+                    //    case "Fantasia":
+                    //        presentacionTexto = presentacion.Fantasia;
+                    //        break;
+                    //    default:
+                    //        presentacionTexto = presentacion.Terror;
+                    //        break;
+                    //}
+                    //prodResultado.presentacion = presentacionTexto;
 					listadePro.Add(prodResultado);
                 }
 
@@ -130,36 +132,36 @@ namespace Middle_Abarrotes_PDV
 		{
 			List<Producto> listadePro = new List<Producto>();
 			Producto prodResultado = new Producto();
-			List<object[]> res = this.bd.consulta("productos", where);
+			List<object[]> res = this.bd.consulta("products", where);
 			//validamos que traig un elemento la lista
 			if (res.Count >= 1)
 			{
 				for (int i = 0; i < res.Count; i++)
 				{
-					prodResultado = new Producto();
-					presentacion presentacionTexto;
-					object[] tempo = res[0];
-					prodResultado.id = int.Parse(tempo[0].ToString());
-					prodResultado.titulo = tempo[1].ToString();
-					prodResultado.issn = tempo[2].ToString();
-					prodResultado.autor = tempo[3].ToString();
-					prodResultado.precio = double.Parse(tempo[5].ToString());
-					switch (tempo[4].ToString())
-					{
-						case "Terror":
-							presentacionTexto = presentacion.Terror;
-							break;
-						case "Romance":
-							presentacionTexto = presentacion.Romance;
-							break;
-						case "Fantasia":
-							presentacionTexto = presentacion.Fantasia;
-							break;
-						default:
-							presentacionTexto = presentacion.Terror;
-							break;
-					}
-                    prodResultado.presentacion = presentacionTexto;
+                    prodResultado = new Producto();
+                    presentacion presentacionTexto;
+                    object[] tempo = res[i];
+                    prodResultado.id = int.Parse(tempo[0].ToString());
+                    prodResultado.nombre = tempo[1].ToString();
+                    prodResultado.descripcion = tempo[2].ToString();
+                    prodResultado.cantidad = int.Parse(tempo[3].ToString());
+                    prodResultado.precio = double.Parse(tempo[4].ToString());
+     //               switch (tempo[4].ToString())
+					//{
+					//	case "Terror":
+					//		presentacionTexto = presentacion.Terror;
+					//		break;
+					//	case "Romance":
+					//		presentacionTexto = presentacion.Romance;
+					//		break;
+					//	case "Fantasia":
+					//		presentacionTexto = presentacion.Fantasia;
+					//		break;
+					//	default:
+					//		presentacionTexto = presentacion.Terror;
+					//		break;
+					//}
+     //               prodResultado.presentacion = presentacionTexto;
                 }
                 listadePro.Add(prodResultado);
 
@@ -176,7 +178,7 @@ namespace Middle_Abarrotes_PDV
         {
             List<Producto> listadePro = new List<Producto>();
             Producto prodResultado = new Producto();
-            List<object[]> res = this.bd.consulta("productos", where);
+            List<object[]> res = this.bd.consulta("products", where);
             //validamos que traig un elemento la lista
             if (res.Count >= 1)
             {
@@ -184,28 +186,28 @@ namespace Middle_Abarrotes_PDV
                 {
                     prodResultado = new Producto();
                     presentacion presentacionTexto;
-                    object[] tempo = res[0];
+                    object[] tempo = res[i];
                     prodResultado.id = int.Parse(tempo[0].ToString());
-                    prodResultado.titulo = tempo[1].ToString();
-                    prodResultado.issn = tempo[2].ToString();
-                    prodResultado.autor = tempo[3].ToString();
-                    prodResultado.precio = double.Parse(tempo[5].ToString());
-                    switch (tempo[4].ToString())
-                    {
-                        case "Terror":
-                            presentacionTexto = presentacion.Terror;
-                            break;
-                        case "Romance":
-                            presentacionTexto = presentacion.Romance;
-                            break;
-                        case "Fantasia":
-                            presentacionTexto = presentacion.Fantasia;
-                            break;
-                        default:
-                            presentacionTexto = presentacion.Terror;
-                            break;
-                    }
-                    prodResultado.presentacion = presentacionTexto;
+                    prodResultado.nombre = tempo[1].ToString();
+                    prodResultado.descripcion = tempo[2].ToString();
+                    prodResultado.cantidad = int.Parse(tempo[3].ToString());
+                    prodResultado.precio = double.Parse(tempo[4].ToString());
+                    //switch (tempo[4].ToString())
+                    //{
+                    //    case "Terror":
+                    //        presentacionTexto = presentacion.Terror;
+                    //        break;
+                    //    case "Romance":
+                    //        presentacionTexto = presentacion.Romance;
+                    //        break;
+                    //    case "Fantasia":
+                    //        presentacionTexto = presentacion.Fantasia;
+                    //        break;
+                    //    default:
+                    //        presentacionTexto = presentacion.Terror;
+                    //        break;
+                    //}
+                    //prodResultado.presentacion = presentacionTexto;
                 }
                 listadePro.Add(prodResultado);
 

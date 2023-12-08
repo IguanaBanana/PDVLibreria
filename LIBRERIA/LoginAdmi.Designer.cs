@@ -54,7 +54,7 @@
             LabelPassword.Location = new Point(43, 214);
             LabelPassword.Name = "LabelPassword";
             LabelPassword.Size = new Size(132, 32);
-            LabelPassword.TabIndex = 3;
+            LabelPassword.TabIndex = 0;
             LabelPassword.Text = "Password";
             // 
             // textBoxPasswordLoginAdmi
@@ -65,7 +65,8 @@
             textBoxPasswordLoginAdmi.Name = "textBoxPasswordLoginAdmi";
             textBoxPasswordLoginAdmi.PasswordChar = '*';
             textBoxPasswordLoginAdmi.Size = new Size(292, 30);
-            textBoxPasswordLoginAdmi.TabIndex = 5;
+            textBoxPasswordLoginAdmi.TabIndex = 1;
+            textBoxPasswordLoginAdmi.KeyDown += buttonAceptarLoginAdmi_KeyDown;
             // 
             // buttonAceptarLoginAdmi
             // 
@@ -74,7 +75,7 @@
             buttonAceptarLoginAdmi.Margin = new Padding(3, 2, 3, 2);
             buttonAceptarLoginAdmi.Name = "buttonAceptarLoginAdmi";
             buttonAceptarLoginAdmi.Size = new Size(127, 32);
-            buttonAceptarLoginAdmi.TabIndex = 6;
+            buttonAceptarLoginAdmi.TabIndex = 2;
             buttonAceptarLoginAdmi.Text = "Aceptar";
             buttonAceptarLoginAdmi.UseVisualStyleBackColor = true;
             buttonAceptarLoginAdmi.Click += buttonAceptarLoginAdmi_Click;

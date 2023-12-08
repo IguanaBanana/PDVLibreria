@@ -57,7 +57,7 @@
             LabelUsuario.Location = new Point(46, 218);
             LabelUsuario.Name = "LabelUsuario";
             LabelUsuario.Size = new Size(107, 32);
-            LabelUsuario.TabIndex = 1;
+            LabelUsuario.TabIndex = 0;
             LabelUsuario.Text = "Usuario";
             // 
             // LabelPassword
@@ -67,7 +67,7 @@
             LabelPassword.Location = new Point(46, 284);
             LabelPassword.Name = "LabelPassword";
             LabelPassword.Size = new Size(132, 32);
-            LabelPassword.TabIndex = 2;
+            LabelPassword.TabIndex = 0;
             LabelPassword.Text = "Password";
             // 
             // textBoxUsuarioLoginUsu
@@ -77,7 +77,7 @@
             textBoxUsuarioLoginUsu.Margin = new Padding(3, 2, 3, 2);
             textBoxUsuarioLoginUsu.Name = "textBoxUsuarioLoginUsu";
             textBoxUsuarioLoginUsu.Size = new Size(292, 30);
-            textBoxUsuarioLoginUsu.TabIndex = 3;
+            textBoxUsuarioLoginUsu.TabIndex = 1;
             textBoxUsuarioLoginUsu.TextChanged += textBoxUsuarioLoginUsu_TextChanged;
             // 
             // textBoxPasswordLoginUsu
@@ -88,7 +88,8 @@
             textBoxPasswordLoginUsu.Name = "textBoxPasswordLoginUsu";
             textBoxPasswordLoginUsu.PasswordChar = '*';
             textBoxPasswordLoginUsu.Size = new Size(292, 30);
-            textBoxPasswordLoginUsu.TabIndex = 4;
+            textBoxPasswordLoginUsu.TabIndex = 2;
+            textBoxPasswordLoginUsu.KeyDown += buttonAceptarFrmLogin_KeyDown;
             // 
             // buttonAceptarLoginUsu
             // 
@@ -97,7 +98,7 @@
             buttonAceptarLoginUsu.Margin = new Padding(3, 2, 3, 2);
             buttonAceptarLoginUsu.Name = "buttonAceptarLoginUsu";
             buttonAceptarLoginUsu.Size = new Size(127, 32);
-            buttonAceptarLoginUsu.TabIndex = 5;
+            buttonAceptarLoginUsu.TabIndex = 3;
             buttonAceptarLoginUsu.Text = "Aceptar";
             buttonAceptarLoginUsu.UseVisualStyleBackColor = true;
             buttonAceptarLoginUsu.Click += buttonAceptarLoginUsu_Click;
@@ -110,7 +111,7 @@
             btnAdmiLogin.Margin = new Padding(3, 2, 3, 2);
             btnAdmiLogin.Name = "btnAdmiLogin";
             btnAdmiLogin.Size = new Size(127, 32);
-            btnAdmiLogin.TabIndex = 6;
+            btnAdmiLogin.TabIndex = 4;
             btnAdmiLogin.Text = "Administrador";
             btnAdmiLogin.UseVisualStyleBackColor = false;
             btnAdmiLogin.Click += btnAdmiLogin_Click;

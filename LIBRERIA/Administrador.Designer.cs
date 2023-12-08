@@ -80,7 +80,7 @@
             btnSalirAdmi.Margin = new Padding(3, 2, 3, 2);
             btnSalirAdmi.Name = "btnSalirAdmi";
             btnSalirAdmi.Size = new Size(62, 26);
-            btnSalirAdmi.TabIndex = 6;
+            btnSalirAdmi.TabIndex = 5;
             btnSalirAdmi.Text = "Salir";
             btnSalirAdmi.UseVisualStyleBackColor = false;
             btnSalirAdmi.Click += btnSalirAdmi_Click;
@@ -95,7 +95,7 @@
             btnConsulta.Margin = new Padding(3, 2, 3, 2);
             btnConsulta.Name = "btnConsulta";
             btnConsulta.Size = new Size(201, 55);
-            btnConsulta.TabIndex = 3;
+            btnConsulta.TabIndex = 4;
             btnConsulta.Text = "Consultar";
             btnConsulta.UseVisualStyleBackColor = false;
             btnConsulta.BackColorChanged += btnUsuarios_BackColorChanged;
@@ -123,7 +123,7 @@
             btnEditar.Margin = new Padding(3, 2, 3, 2);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(201, 55);
-            btnEditar.TabIndex = 2;
+            btnEditar.TabIndex = 3;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.BackColorChanged += btnUsuarios_BackColorChanged;
@@ -151,7 +151,7 @@
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(201, 55);
-            btnAgregar.TabIndex = 1;
+            btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.BackColorChanged += btnUsuarios_BackColorChanged;
@@ -179,7 +179,7 @@
             btnUsuarios.Margin = new Padding(3, 2, 3, 2);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(201, 55);
-            btnUsuarios.TabIndex = 0;
+            btnUsuarios.TabIndex = 1;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.BackColorChanged += btnUsuarios_BackColorChanged;
@@ -207,7 +207,7 @@
             label1.Location = new Point(112, 28);
             label1.Name = "label1";
             label1.Size = new Size(142, 32);
-            label1.TabIndex = 1;
+            label1.TabIndex = 0;
             label1.Text = "La Libreria";
             // 
             // pictureBox1
@@ -229,13 +229,13 @@
             panelAmdiForm.Margin = new Padding(3, 2, 3, 2);
             panelAmdiForm.Name = "panelAmdiForm";
             panelAmdiForm.Size = new Size(1150, 575);
-            panelAmdiForm.TabIndex = 1;
+            panelAmdiForm.TabIndex = 0;
             // 
             // Administrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1399, 575);
+            ClientSize = new Size(1370, 575);
             Controls.Add(panel1);
             Controls.Add(panelAmdiForm);
             Margin = new Padding(3, 2, 3, 2);

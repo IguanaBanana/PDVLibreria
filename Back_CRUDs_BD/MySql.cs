@@ -111,7 +111,7 @@ namespace Back_CRUDs_BD
                 }
                 camposConcat = camposConcat.Remove(camposConcat.Length - 1);
                 
-                commando = new MySqlCommand($"UPDATE {tabla} SET {camposConcat} WHERE id={id}");
+                commando = new MySqlCommand($"UPDATE {tabla} SET {camposConcat} WHERE ProductID={id}");
 
                 //UPDATE productos SET nombre='CHEETOS', precio=30.05, cod_barras='02323922882999392' WHERE id=90;
 
@@ -148,7 +148,7 @@ namespace Back_CRUDs_BD
             {
                 if (con.State == System.Data.ConnectionState.Closed)
                     con.Open();
-                commando = new MySqlCommand($"DELETE FROM {tabla} WHERE id={id}");
+                commando = new MySqlCommand($"DELETE FROM {tabla} WHERE ProductID={id}");
                 commando.Connection = con;
                 int res = commando.ExecuteNonQuery();
                 if (res == 1)

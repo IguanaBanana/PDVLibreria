@@ -25,13 +25,13 @@ namespace LIBRERIA
 
         private void buttonBuscVenta_Click(object sender, EventArgs e)
         {
-            List<Producto> res = prod.consultarPorTitulo($"Titulo LIKE '%{textBoxTituloVenta.Text}%'");
+            List<Producto> res = prod.consultarPorTitulo($"Name LIKE '%{textBoxNombreVenta.Text}%'");
             if (res.Count > 0)
             {
                 foreach (Producto prodResultado in res)
                 {
-                    dataGridLista.Rows.Add(new object[] { prodResultado.id, prodResultado.titulo, prodResultado.issn, prodResultado.precio, numericCantVentas.Value });
-                    textBoxTituloVenta.Clear();
+                    dataGridLista.Rows.Add(new object[] { prodResultado.id, prodResultado.nombre, prodResultado.descripcion, prodResultado.precio, prodResultado.cantidad });
+                    textBoxNombreVenta.Clear();
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace LIBRERIA
             }
             else
             {
-                MessageBox.Show("Favor de seleccionar un libro");
+                MessageBox.Show("Favor de seleccionar un producto");
             }
         }
 
@@ -90,7 +90,7 @@ namespace LIBRERIA
                 textBoxEfectivoVenta.Clear();
                 textBoxSubVenta.Clear();
                 textBoxTotalVenta.Clear();
-                textBoxTituloVenta.Clear();
+                textBoxNombreVenta.Clear();
                 numericCantVentas.ResetText();
                 dataGridLista.Rows.Clear();
                 dataGridVenta.Rows.Clear();

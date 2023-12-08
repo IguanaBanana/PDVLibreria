@@ -1833,19 +1833,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aneth\\.nuget\\packages\\": {}
+    "C:\\Users\\ivela\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\LIBRERIA\\LIBRERIA.csproj",
+      "projectUniqueName": "C:\\Users\\ivela\\OneDrive\\Escritorio\\UTH\\Source\\repos\\PDVLibreria\\LIBRERIA\\LIBRERIA.csproj",
       "projectName": "LIBRERIA",
-      "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\LIBRERIA\\LIBRERIA.csproj",
-      "packagesPath": "C:\\Users\\aneth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\LIBRERIA\\obj\\",
+      "projectPath": "C:\\Users\\ivela\\OneDrive\\Escritorio\\UTH\\Source\\repos\\PDVLibreria\\LIBRERIA\\LIBRERIA.csproj",
+      "packagesPath": "C:\\Users\\ivela\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ivela\\OneDrive\\Escritorio\\UTH\\Source\\repos\\PDVLibreria\\LIBRERIA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aneth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ivela\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1859,8 +1859,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
-              "projectPath": "C:\\Users\\aneth\\OneDrive\\Escritorio\\source\\repos\\PDVLibrros\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
+            "C:\\Users\\ivela\\OneDrive\\Escritorio\\UTH\\Source\\repos\\PDVLibreria\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj": {
+              "projectPath": "C:\\Users\\ivela\\OneDrive\\Escritorio\\UTH\\Source\\repos\\PDVLibreria\\Middle_Abarrotes_PDV\\Middle_Abarrotes_PDV.csproj"
             }
           }
         }
@@ -1885,6 +1885,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -1893,7 +1911,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

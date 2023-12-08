@@ -19,7 +19,7 @@ namespace Middle_Abarrotes_PDV
         public Ventass()
         {
             //crear una instancia de MYSQL a mi bd
-            bd = new Back_CRUDs_BD.MySql("localhost", "root", "", "La_Libreria", "3306");
+            bd = new Back_CRUDs_BD.MySql("localhost", "root", "", "pdv-luis", "3306");
         }
 
         public double registrarVenta(int cajeroId, double monto, double pago,List<ProductoAVender> prodsAVender) {
@@ -28,36 +28,36 @@ namespace Middle_Abarrotes_PDV
             //registramos la venta de la tabla 'ventas'
             try
             {
-                List<string> campos = new List<string>() { "fecha_hora", "cajero_id", "monto"  };
+                List<string> campos = new List<string>() { "customerID", "Date", "TotalAmount"  };
 
                 List<ValoresAInsertar> valores = new List<ValoresAInsertar>() 
-                { 
-                    new ValoresAInsertar(DateTime.Now.ToString(), true ),
+                {
                     new ValoresAInsertar(cajeroId.ToString(), false ),
+                    new ValoresAInsertar(DateTime.Today.ToString(), true ),
                     new ValoresAInsertar(monto.ToString(), false ),
                 };
 
                 //INSERT INTO `ventas`( `fecha_hora`, `cajero_id`, `monto`) VALUES ('"+fechaHora.Now+"]','"+this.cajeroId+"','"this.monto"')
-                bool registroVenta = bd.insertar("ventas", campos, valores);
+                bool registroVenta = bd.insertar("Sales", campos, valores);
                 if (registroVenta)
                 {
                     //cuando se registra la venta, tomamos su ID (Last_insert_id o el SELECT )
-                    int ultimoIDVenta = int.Parse(bd.consulta1SoloValor("id", "ventas", " 1 ORDER BY id DESC LIMIT 1").ToString());// consulta1SoloValor(string campo, string tabla, string criterioBusqueda)
+                    int ultimoIDVenta = int.Parse(bd.consulta1SoloValor("saleid", "sales", " 1 ORDER BY saleid DESC LIMIT 1").ToString());// consulta1SoloValor(string campo, string tabla, string criterioBusqueda)
                     //hacemos un barrido de todos los productos a Vender, en la lista prodsAVender
                     //lista de campos detalles
 
-                    List<string> listaCamposDetalles = new List<string>() { "venta_id", "producto_id", "cantidad" };
+                    List<string> listaCamposDetalles = new List<string>() { "Quantity", "SaleID", "Price" };
                   
                     for (int i = 0; i < prodsAVender.Count; i++)
                     {
                         // por cada prod en la lista, hacemos un registro en Ventas_Detalles
                        // $"INSERT INTO `ventas_detalles`(`venta_id`, `producto_id`, `cantidad`) VALUES ({ultimoIDVenta},{prodsAVender[i].productoId},{prodsAVender[i].cantidad})"
                         List<ValoresAInsertar> listaValoresDetalles = new List<ValoresAInsertar>() {
-                        new ValoresAInsertar(ultimoIDVenta.ToString(), false),
-                        new ValoresAInsertar(prodsAVender[i].productoId.ToString(), false),
                         new ValoresAInsertar(prodsAVender[i].cantidad.ToString(), false),
+                        new ValoresAInsertar(prodsAVender[i].productoId.ToString(), false),
+                        new ValoresAInsertar(ultimoIDVenta.ToString(), false),
                         };
-                        bool resDetalles = bd.insertar("ventas_detalles", listaCamposDetalles, listaValoresDetalles);
+                        bool resDetalles = bd.insertar("salesdetails", listaCamposDetalles, listaValoresDetalles);
                         if (resDetalles) {
                             // double precio = double.Parse(bd.consulta1SoloValor("precio", "productos", "id =" + prodsAVender[i].productoId).ToString());
                             // monto += precio * prodsAVender[i].cantidad;

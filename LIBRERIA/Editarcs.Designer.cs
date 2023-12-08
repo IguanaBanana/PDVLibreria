@@ -29,28 +29,25 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Titulo = new DataGridViewTextBoxColumn();
-            ISSN = new DataGridViewTextBoxColumn();
-            Autor = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
             buttonSeleccionarEditar = new Button();
             label1 = new Label();
             textBoxTituloEditar = new TextBox();
             label2 = new Label();
-            textBoxAutorEditar = new TextBox();
+            textBoxDescEditar = new TextBox();
             label3 = new Label();
-            comboBoxCategoriaEditar = new ComboBox();
             label4 = new Label();
             textBoxPrecioEditar = new TextBox();
             buttonEditarEditar = new Button();
             textBoxTituloEditarBuscar = new TextBox();
             label5 = new Label();
-            textBoxISSNEditar = new TextBox();
-            label6 = new Label();
             label7 = new Label();
             textBoxIDEditar = new TextBox();
+            textBoxCantidadEditar = new TextBox();
+            ID = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
+            Autor = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +57,7 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Titulo, ISSN, Autor, Categoria, Precio });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Descripcion, Autor, Categoria });
             dataGridView1.Location = new Point(21, 72);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
@@ -71,42 +68,6 @@
             dataGridView1.Size = new Size(1104, 187);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Titulo
-            // 
-            Titulo.HeaderText = "Titulo";
-            Titulo.Name = "Titulo";
-            Titulo.ReadOnly = true;
-            // 
-            // ISSN
-            // 
-            ISSN.HeaderText = "ISSN";
-            ISSN.Name = "ISSN";
-            ISSN.ReadOnly = true;
-            // 
-            // Autor
-            // 
-            Autor.HeaderText = "Autor";
-            Autor.Name = "Autor";
-            Autor.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            Categoria.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
             // 
             // buttonSeleccionarEditar
             // 
@@ -124,19 +85,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(330, 291);
+            label1.Location = new Point(565, 291);
             label1.Name = "label1";
-            label1.Size = new Size(56, 23);
+            label1.Size = new Size(79, 23);
             label1.TabIndex = 14;
-            label1.Text = "Titulo";
+            label1.Text = "Nombre";
             // 
             // textBoxTituloEditar
             // 
             textBoxTituloEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxTituloEditar.Location = new Point(330, 321);
+            textBoxTituloEditar.Location = new Point(565, 321);
             textBoxTituloEditar.Margin = new Padding(3, 2, 3, 2);
             textBoxTituloEditar.Name = "textBoxTituloEditar";
-            textBoxTituloEditar.Size = new Size(382, 30);
+            textBoxTituloEditar.Size = new Size(529, 30);
             textBoxTituloEditar.TabIndex = 15;
             // 
             // label2
@@ -145,18 +106,18 @@
             label2.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(21, 384);
             label2.Name = "label2";
-            label2.Size = new Size(57, 23);
+            label2.Size = new Size(112, 23);
             label2.TabIndex = 16;
-            label2.Text = "Autor";
+            label2.Text = "Descripcion";
             // 
-            // textBoxAutorEditar
+            // textBoxDescEditar
             // 
-            textBoxAutorEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxAutorEditar.Location = new Point(21, 409);
-            textBoxAutorEditar.Margin = new Padding(3, 2, 3, 2);
-            textBoxAutorEditar.Name = "textBoxAutorEditar";
-            textBoxAutorEditar.Size = new Size(486, 30);
-            textBoxAutorEditar.TabIndex = 17;
+            textBoxDescEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxDescEditar.Location = new Point(21, 409);
+            textBoxDescEditar.Margin = new Padding(3, 2, 3, 2);
+            textBoxDescEditar.Name = "textBoxDescEditar";
+            textBoxDescEditar.Size = new Size(523, 30);
+            textBoxDescEditar.TabIndex = 17;
             // 
             // label3
             // 
@@ -164,20 +125,9 @@
             label3.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(578, 374);
             label3.Name = "label3";
-            label3.Size = new Size(96, 23);
+            label3.Size = new Size(88, 23);
             label3.TabIndex = 18;
-            label3.Text = "Categoria";
-            // 
-            // comboBoxCategoriaEditar
-            // 
-            comboBoxCategoriaEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCategoriaEditar.FormattingEnabled = true;
-            comboBoxCategoriaEditar.Items.AddRange(new object[] { "Terror", "Romance", "Fantasia" });
-            comboBoxCategoriaEditar.Location = new Point(578, 408);
-            comboBoxCategoriaEditar.Margin = new Padding(3, 2, 3, 2);
-            comboBoxCategoriaEditar.Name = "comboBoxCategoriaEditar";
-            comboBoxCategoriaEditar.Size = new Size(218, 31);
-            comboBoxCategoriaEditar.TabIndex = 19;
+            label3.Text = "Cantidad";
             // 
             // label4
             // 
@@ -213,10 +163,10 @@
             // textBoxTituloEditarBuscar
             // 
             textBoxTituloEditarBuscar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxTituloEditarBuscar.Location = new Point(83, 36);
+            textBoxTituloEditarBuscar.Location = new Point(106, 36);
             textBoxTituloEditarBuscar.Margin = new Padding(3, 2, 3, 2);
             textBoxTituloEditarBuscar.Name = "textBoxTituloEditarBuscar";
-            textBoxTituloEditarBuscar.Size = new Size(600, 30);
+            textBoxTituloEditarBuscar.Size = new Size(577, 30);
             textBoxTituloEditarBuscar.TabIndex = 24;
             // 
             // label5
@@ -225,28 +175,9 @@
             label5.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(21, 39);
             label5.Name = "label5";
-            label5.Size = new Size(56, 23);
+            label5.Size = new Size(79, 23);
             label5.TabIndex = 25;
-            label5.Text = "Titulo";
-            // 
-            // textBoxISSNEditar
-            // 
-            textBoxISSNEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxISSNEditar.Location = new Point(750, 321);
-            textBoxISSNEditar.Margin = new Padding(3, 2, 3, 2);
-            textBoxISSNEditar.Name = "textBoxISSNEditar";
-            textBoxISSNEditar.Size = new Size(344, 30);
-            textBoxISSNEditar.TabIndex = 26;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(750, 291);
-            label6.Name = "label6";
-            label6.Size = new Size(55, 23);
-            label6.TabIndex = 27;
-            label6.Text = "ISSN";
+            label5.Text = "Nombre";
             // 
             // label7
             // 
@@ -265,8 +196,47 @@
             textBoxIDEditar.Location = new Point(21, 321);
             textBoxIDEditar.Margin = new Padding(3, 2, 3, 2);
             textBoxIDEditar.Name = "textBoxIDEditar";
-            textBoxIDEditar.Size = new Size(249, 30);
+            textBoxIDEditar.Size = new Size(523, 30);
             textBoxIDEditar.TabIndex = 29;
+            // 
+            // textBoxCantidadEditar
+            // 
+            textBoxCantidadEditar.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxCantidadEditar.Location = new Point(569, 409);
+            textBoxCantidadEditar.Margin = new Padding(3, 2, 3, 2);
+            textBoxCantidadEditar.Name = "textBoxCantidadEditar";
+            textBoxCantidadEditar.Size = new Size(249, 30);
+            textBoxCantidadEditar.TabIndex = 30;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
+            Descripcion.ReadOnly = true;
+            // 
+            // Autor
+            // 
+            Autor.HeaderText = "Precio";
+            Autor.Name = "Autor";
+            Autor.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Cantidad";
+            Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
             // 
             // Editarcs
             // 
@@ -274,18 +244,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1134, 536);
+            Controls.Add(textBoxCantidadEditar);
             Controls.Add(textBoxIDEditar);
             Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(textBoxISSNEditar);
             Controls.Add(label5);
             Controls.Add(textBoxTituloEditarBuscar);
             Controls.Add(buttonEditarEditar);
             Controls.Add(textBoxPrecioEditar);
             Controls.Add(label4);
-            Controls.Add(comboBoxCategoriaEditar);
             Controls.Add(label3);
-            Controls.Add(textBoxAutorEditar);
+            Controls.Add(textBoxDescEditar);
             Controls.Add(label2);
             Controls.Add(textBoxTituloEditar);
             Controls.Add(label1);
@@ -307,23 +275,20 @@
         private Label label1;
         private TextBox textBoxTituloEditar;
         private Label label2;
-        private TextBox textBoxAutorEditar;
+        private TextBox textBoxDescEditar;
         private Label label3;
-        private ComboBox comboBoxCategoriaEditar;
         private Label label4;
         private TextBox textBoxPrecioEditar;
         private Button buttonEditarEditar;
         private TextBox textBoxTituloEditarBuscar;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Titulo;
-        private DataGridViewTextBoxColumn ISSN;
-        private DataGridViewTextBoxColumn Autor;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn Precio;
         private Label label5;
-        private TextBox textBoxISSNEditar;
-        private Label label6;
         private Label label7;
         private TextBox textBoxIDEditar;
+        private TextBox textBoxCantidadEditar;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Descripcion;
+        private DataGridViewTextBoxColumn Autor;
+        private DataGridViewTextBoxColumn Categoria;
     }
 }

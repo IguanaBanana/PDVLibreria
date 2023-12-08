@@ -35,10 +35,11 @@ namespace LIBRERIA
         public void buttonAceptarLoginUsu_Click(object sender, EventArgs e)
         {
 
-            List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Nombre =  '{textBoxUsuarioLoginUsu.Text}' AND Password =  '{textBoxPasswordLoginUsu.Text}'");
+            List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Name =  '{textBoxUsuarioLoginUsu.Text}' AND Password =  '{textBoxPasswordLoginUsu.Text}'");
             //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
             if (resultado.Count > 0)
-            {   textBoxPasswordLoginUsu.Clear();
+            {
+                textBoxPasswordLoginUsu.Clear();
                 textBoxUsuarioLoginUsu.Clear();
                 Venta frm = new Venta();
                 frm.Show();
@@ -46,6 +47,27 @@ namespace LIBRERIA
             else
             {
                 MessageBox.Show("Los datos son incorrectos");
+            }
+        }
+
+        private void buttonAceptarFrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                List<UsuariosMiddle> resultado = usu.consultarUsuarios($"Name =  '{textBoxUsuarioLoginUsu.Text}' AND Password =  '{textBoxPasswordLoginUsu.Text}'");
+                //List<Producto> prods = prod.consultarGeneral($" nombre LIKE '%{txtBuscador.Text}%' OR descripcion LIKE '%{txtBuscador.Text}%'");
+                if (resultado.Count > 0)
+                {
+                    textBoxPasswordLoginUsu.Clear();
+                    textBoxUsuarioLoginUsu.Clear();
+                    Venta frm = new Venta();
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos son incorrectos");
+                }
             }
         }
     }

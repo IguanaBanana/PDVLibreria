@@ -31,7 +31,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBoxPassUsuario = new TextBox();
+            textBoxDireccion = new TextBox();
             textBoxCorreoUsuario = new TextBox();
             textBoxNombreUsuario = new TextBox();
             buttonEditarUsuario = new Button();
@@ -41,10 +41,16 @@
             ID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
             Password = new DataGridViewTextBoxColumn();
             label5 = new Label();
             textBoxIDUsuario = new TextBox();
             buttonBuscarUsu = new Button();
+            textBoxTelefono = new TextBox();
+            textBoxPassUsusario = new TextBox();
+            label4 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -74,37 +80,40 @@
             label3.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(57, 176);
             label3.Name = "label3";
-            label3.Size = new Size(98, 23);
+            label3.Size = new Size(91, 23);
             label3.TabIndex = 3;
-            label3.Text = "Password";
+            label3.Text = "Direccion";
             // 
-            // textBoxPassUsuario
+            // textBoxDireccion
             // 
-            textBoxPassUsuario.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassUsuario.Location = new Point(57, 200);
-            textBoxPassUsuario.Margin = new Padding(3, 2, 3, 2);
-            textBoxPassUsuario.Name = "textBoxPassUsuario";
-            textBoxPassUsuario.PasswordChar = '*';
-            textBoxPassUsuario.Size = new Size(1048, 30);
-            textBoxPassUsuario.TabIndex = 4;
+            textBoxDireccion.Enabled = false;
+            textBoxDireccion.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxDireccion.Location = new Point(57, 200);
+            textBoxDireccion.Margin = new Padding(3, 2, 3, 2);
+            textBoxDireccion.Name = "textBoxDireccion";
+            textBoxDireccion.Size = new Size(429, 30);
+            textBoxDireccion.TabIndex = 8;
             // 
             // textBoxCorreoUsuario
             // 
+            textBoxCorreoUsuario.Enabled = false;
             textBoxCorreoUsuario.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxCorreoUsuario.Location = new Point(57, 132);
             textBoxCorreoUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxCorreoUsuario.Name = "textBoxCorreoUsuario";
-            textBoxCorreoUsuario.Size = new Size(1048, 30);
-            textBoxCorreoUsuario.TabIndex = 5;
+            textBoxCorreoUsuario.Size = new Size(429, 30);
+            textBoxCorreoUsuario.TabIndex = 6;
             // 
             // textBoxNombreUsuario
             // 
+            textBoxNombreUsuario.Enabled = false;
             textBoxNombreUsuario.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxNombreUsuario.Location = new Point(246, 69);
             textBoxNombreUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxNombreUsuario.Name = "textBoxNombreUsuario";
             textBoxNombreUsuario.Size = new Size(859, 30);
-            textBoxNombreUsuario.TabIndex = 6;
+            textBoxNombreUsuario.TabIndex = 5;
+            textBoxNombreUsuario.KeyDown += textBoxNombreUsuario_KeyDown;
             // 
             // buttonEditarUsuario
             // 
@@ -113,7 +122,7 @@
             buttonEditarUsuario.Margin = new Padding(3, 2, 3, 2);
             buttonEditarUsuario.Name = "buttonEditarUsuario";
             buttonEditarUsuario.Size = new Size(105, 28);
-            buttonEditarUsuario.TabIndex = 11;
+            buttonEditarUsuario.TabIndex = 2;
             buttonEditarUsuario.Text = "Editar";
             buttonEditarUsuario.UseVisualStyleBackColor = true;
             buttonEditarUsuario.Click += buttonEditarUsuario_Click;
@@ -125,7 +134,7 @@
             buttonAgregarUsuario.Margin = new Padding(3, 2, 3, 2);
             buttonAgregarUsuario.Name = "buttonAgregarUsuario";
             buttonAgregarUsuario.Size = new Size(105, 28);
-            buttonAgregarUsuario.TabIndex = 12;
+            buttonAgregarUsuario.TabIndex = 3;
             buttonAgregarUsuario.Text = "Agregar";
             buttonAgregarUsuario.UseVisualStyleBackColor = true;
             buttonAgregarUsuario.Click += buttonAgregarUsuario_Click;
@@ -147,7 +156,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Correo, Password });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Correo, Telefono, Direccion, Password });
             dataGridView1.Location = new Point(60, 288);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
@@ -155,7 +164,8 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(1044, 231);
-            dataGridView1.TabIndex = 14;
+            dataGridView1.TabIndex = 0;
+            dataGridView1.TabStop = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ID
@@ -178,6 +188,18 @@
             Correo.MinimumWidth = 6;
             Correo.Name = "Correo";
             Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ReadOnly = true;
             // 
             // Password
             // 
@@ -204,7 +226,7 @@
             textBoxIDUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxIDUsuario.Name = "textBoxIDUsuario";
             textBoxIDUsuario.Size = new Size(159, 30);
-            textBoxIDUsuario.TabIndex = 16;
+            textBoxIDUsuario.TabIndex = 4;
             // 
             // buttonBuscarUsu
             // 
@@ -213,10 +235,52 @@
             buttonBuscarUsu.Margin = new Padding(3, 2, 3, 2);
             buttonBuscarUsu.Name = "buttonBuscarUsu";
             buttonBuscarUsu.Size = new Size(105, 28);
-            buttonBuscarUsu.TabIndex = 17;
+            buttonBuscarUsu.TabIndex = 1;
             buttonBuscarUsu.Text = "Buscar";
             buttonBuscarUsu.UseVisualStyleBackColor = true;
             buttonBuscarUsu.Click += buttonBuscarUsu_Click;
+            // 
+            // textBoxTelefono
+            // 
+            textBoxTelefono.Enabled = false;
+            textBoxTelefono.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxTelefono.Location = new Point(524, 132);
+            textBoxTelefono.Margin = new Padding(3, 2, 3, 2);
+            textBoxTelefono.Name = "textBoxTelefono";
+            textBoxTelefono.Size = new Size(429, 30);
+            textBoxTelefono.TabIndex = 7;
+            textBoxTelefono.TextChanged += textBox1_TextChanged;
+            // 
+            // textBoxPassUsusario
+            // 
+            textBoxPassUsusario.Enabled = false;
+            textBoxPassUsusario.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPassUsusario.Location = new Point(524, 200);
+            textBoxPassUsusario.Margin = new Padding(3, 2, 3, 2);
+            textBoxPassUsusario.Name = "textBoxPassUsusario";
+            textBoxPassUsusario.PasswordChar = '*';
+            textBoxPassUsusario.Size = new Size(429, 30);
+            textBoxPassUsusario.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(524, 176);
+            label4.Name = "label4";
+            label4.Size = new Size(98, 23);
+            label4.TabIndex = 19;
+            label4.Text = "Password";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(524, 109);
+            label6.Name = "label6";
+            label6.Size = new Size(84, 23);
+            label6.TabIndex = 18;
+            label6.Text = "Telefono";
             // 
             // Usuarios
             // 
@@ -224,6 +288,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1134, 536);
+            Controls.Add(textBoxTelefono);
+            Controls.Add(textBoxPassUsusario);
+            Controls.Add(label4);
+            Controls.Add(label6);
             Controls.Add(buttonBuscarUsu);
             Controls.Add(textBoxIDUsuario);
             Controls.Add(label5);
@@ -233,7 +301,7 @@
             Controls.Add(buttonEditarUsuario);
             Controls.Add(textBoxNombreUsuario);
             Controls.Add(textBoxCorreoUsuario);
-            Controls.Add(textBoxPassUsuario);
+            Controls.Add(textBoxDireccion);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -251,19 +319,25 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBoxPassUsuario;
+        private TextBox textBoxDireccion;
         private TextBox textBoxCorreoUsuario;
         private TextBox textBoxNombreUsuario;
         private Button buttonEditarUsuario;
         private Button buttonAgregarUsuario;
         private Button buttonEliminarUsuario;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Correo;
-        private DataGridViewTextBoxColumn Password;
         private Label label5;
         private TextBox textBoxIDUsuario;
         private Button buttonBuscarUsu;
+        private TextBox textBoxTelefono;
+        private TextBox textBoxPassUsusario;
+        private Label label4;
+        private Label label6;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn Password;
     }
 }
